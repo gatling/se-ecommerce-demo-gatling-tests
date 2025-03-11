@@ -1,25 +1,25 @@
 package example
 
-import example.endpoints.APIendpoints
-import example.groups.ScenarioGroups
-import example.utils.Config
+import example.endpoints.*
+import example.groups.*
+import example.utils.*
 
 import io.gatling.javaapi.core.*
 import io.gatling.javaapi.http.*
 import io.gatling.javaapi.core.CoreDsl.*
 import io.gatling.javaapi.http.HttpDsl.*
-// import java.util.List
 
 import kotlin.collections.List
 import kotlin.collections.toList
+
 
 class AdvancedSimulation : Simulation() {
 
     // Define HTTP protocol configuration with authentication header
     // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
     companion object {
-        val httpProtocolWithAuthentication = APIendpoints.withAuthenticationHeader(
-            http.baseUrl(Config.baseUrl)
+        val httpProtocolWithAuthentication = withAuthenticationHeader(
+            http.baseUrl(baseUrl)
                 .acceptHeader("application/json")
                 .userAgentHeader(
                     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0"
@@ -34,32 +34,32 @@ class AdvancedSimulation : Simulation() {
         .on(
             randomSwitch()
                 .on(
-                    percent(Config.frPerc)
+                    percent(frPerc)
                         .then(
                             group("fr")
                                 .on(
-                                    ScenarioGroups.homeAnonymous,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.authenticate,
-                                    ScenarioGroups.homeAuthenticated,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.addToCart,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.buy
+                                    homeAnonymous,
+                                    pause(minPauseSec, maxPauseSec),
+                                    authenticate,
+                                    homeAuthenticated,
+                                    pause(minPauseSec, maxPauseSec),
+                                    addToCart,
+                                    pause(minPauseSec, maxPauseSec),
+                                    buy
                                 )
                         ),
-                    percent(Config.usPerc)
+                    percent(usPerc)
                         .then(
                             group("us")
                                 .on(
-                                    ScenarioGroups.homeAnonymous,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.authenticate,
-                                    ScenarioGroups.homeAuthenticated,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.addToCart,
-                                    pause(Config.minPauseSec, Config.maxPauseSec),
-                                    ScenarioGroups.buy
+                                    homeAnonymous,
+                                    pause(minPauseSec, maxPauseSec),
+                                    authenticate,
+                                    homeAuthenticated,
+                                    pause(minPauseSec, maxPauseSec),
+                                    addToCart,
+                                    pause(minPauseSec, maxPauseSec),
+                                    buy
                                 )
                         )
                 )
@@ -75,25 +75,25 @@ class AdvancedSimulation : Simulation() {
                 .on(
                     group("fr")
                         .on(
-                            ScenarioGroups.homeAnonymous,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.authenticate,
-                            ScenarioGroups.homeAuthenticated,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.addToCart,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.buy
+                            homeAnonymous,
+                            pause(minPauseSec, maxPauseSec),
+                            authenticate,
+                            homeAuthenticated,
+                            pause(minPauseSec, maxPauseSec),
+                            addToCart,
+                            pause(minPauseSec, maxPauseSec),
+                            buy
                         ),
                     group("us")
                         .on(
-                            ScenarioGroups.homeAnonymous,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.authenticate,
-                            ScenarioGroups.homeAuthenticated,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.addToCart,
-                            pause(Config.minPauseSec, Config.maxPauseSec),
-                            ScenarioGroups.buy
+                            homeAnonymous,
+                            pause(minPauseSec, maxPauseSec),
+                            authenticate,
+                            homeAuthenticated,
+                            pause(minPauseSec, maxPauseSec),
+                            addToCart,
+                            pause(minPauseSec, maxPauseSec),
+                            buy
                         )
                 )
         )
@@ -102,23 +102,23 @@ class AdvancedSimulation : Simulation() {
     // Define different load injection profiles
     // Reference: https://docs.gatling.io/reference/script/core/injection/
     private fun injectionProfile(scn: ScenarioBuilder): PopulationBuilder {
-        return when (Config.testType) {
+        return when (testType) {
             "capacity" -> scn.injectOpen(
-                incrementUsersPerSec(Config.vu.toDouble())
+                incrementUsersPerSec(vu.toDouble())
                     .times(4)
-                    .eachLevelLasting(Config.duration)
+                    .eachLevelLasting(duration)
                     .separatedByRampsLasting(4)
                     .startingFrom(10.0)
             )
-            "soak" -> scn.injectOpen(constantUsersPerSec(Config.vu.toDouble()).during(Config.duration))
-            "stress" -> scn.injectOpen(stressPeakUsers(Config.vu).during(Config.duration))
-            "breakpoint" -> scn.injectOpen(rampUsers(Config.vu).during(Config.duration))
+            "soak" -> scn.injectOpen(constantUsersPerSec(vu.toDouble()).during(duration))
+            "stress" -> scn.injectOpen(stressPeakUsers(vu).during(duration))
+            "breakpoint" -> scn.injectOpen(rampUsers(vu).during(duration))
             "ramp-hold" -> scn.injectOpen(
-                rampUsersPerSec(0.0).to(Config.vu.toDouble()).during(Config.rampDuration),
-                constantUsersPerSec(Config.vu.toDouble()).during(Config.duration)
+                rampUsersPerSec(0.0).to(vu.toDouble()).during(rampDuration),
+                constantUsersPerSec(vu.toDouble()).during(duration)
             )
             "smoke" -> scn.injectOpen(atOnceUsers(1))
-            else -> scn.injectOpen(atOnceUsers(Config.vu))
+            else -> scn.injectOpen(atOnceUsers(vu))
         }
     }
 
@@ -130,7 +130,7 @@ class AdvancedSimulation : Simulation() {
     )
 
     private fun getAssertions(): List<Assertion> {
-        return when (Config.testType) {
+        return when (testType) {
             "capacity", "soak", "stress", "breakpoint", "ramp-hold" -> assertions
             "smoke" -> listOf(global().failedRequests().count().lt(1L))
             else -> assertions
