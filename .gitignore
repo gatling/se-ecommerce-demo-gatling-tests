@@ -1,2 +1,6 @@
 /kotlin/target
 /java/target
+/scala/project
+/scala/target
+/javascript/target
+/javascript/node_modules
