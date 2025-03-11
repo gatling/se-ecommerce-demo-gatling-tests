@@ -1,2 +1,3 @@
-/target
+/kotlin/target
+/java/target
 /.mvn/wrapper/*.jar
