@@ -4,3 +4,5 @@
 /scala/target
 /javascript/target
 /javascript/node_modules
+/typescript/target
+/typescript/node_modules
