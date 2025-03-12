@@ -5,7 +5,7 @@
   "type": "module",
   "main": "target/bundle",
   "dependencies": {
-    "@gatling.io/core": "3.13.402",
+    "@gatling.io/core": "3.13.500",
     "@gatling.io/http": "3.13.402"
   },
   "devDependencies": {
