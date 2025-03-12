@@ -1,18 +1,17 @@
-Gatling plugin for Maven - Kotlin ecommerce application load tests
-==============================================
+Gatling plugin for Gradle - Kotlin demo project
+===============================================
 
-A simple showcase of a Maven project using the Gatling plugin for Maven. Refer to the plugin documentation
-[on the Gatling website](https://docs.gatling.io/reference/integrations/build-tools/maven-plugin/) for usage.
+A simple showcase of a Gradle project using the Gatling plugin for Gradle. Refer to the plugin documentation
+[on the Gatling website](https://docs.gatling.io/reference/integrations/build-tools/gradle-plugin/) for usage.
 
-This project is written in Kotlin, others are available for [Java](https://github.com/gatling/gatling-maven-plugin-demo-java)
-and [Scala](https://github.com/gatling/gatling-maven-plugin-demo-scala).
+This project is written in Kotlin, others are available for [Java](https://github.com/gatling/gatling-gradle-plugin-demo-java)
+and [Scala](https://github.com/gatling/gatling-gradle-plugin-demo-scala).
 
 It includes:
 
-* [Maven Wrapper](https://maven.apache.org/wrapper/), so that you can immediately run Maven with `./mvnw` without having
-  to install it on your computer
-* minimal `pom.xml`
-* latest version of `io.gatling:gatling-maven-plugin` applied
+* Gradle Wrapper, so you don't need to install Gradle (a JDK must be installed and $JAVA_HOME configured)
+* minimal `build.gradle.kts` leveraging Gradle wrapper
+* latest version of `io.gatling.gradle` plugin applied
 * sample [Simulation](https://docs.gatling.io/reference/glossary/#simulation) class,
-  demonstrating sufficient Gatling functionality
+demonstrating sufficient Gatling functionality
 * proper source file layout
