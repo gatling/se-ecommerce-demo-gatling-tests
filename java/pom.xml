@@ -5,7 +5,7 @@
 
   <groupId>gatling.ecomm.app.java</groupId>
   <artifactId>gatling.ecomm.app.java</artifactId>
-  <version>3.13.4</version>
+  <version>3.13.5</version>
 
   <properties>
     <maven.compiler.release>21</maven.compiler.release>
