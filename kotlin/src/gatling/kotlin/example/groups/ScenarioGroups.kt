@@ -10,6 +10,8 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import java.util.ArrayList
 
+// Define a data class for product details
+// Reference: https://kotlinlang.org/docs/data-classes.html
 data class Product(
     val id: Int,
     val name: String,
@@ -20,6 +22,8 @@ data class Product(
     val imageAlt: String
 )
 
+// ObjectMapper for JSON serialization/deserialization
+// Reference: https://fasterxml.github.io/jackson-databind/
 private val mapper: ObjectMapper = jacksonObjectMapper()
 
 // Define a feeder for user data
@@ -42,6 +46,7 @@ val homeAuthenticated: ChainBuilder = group("homeAuthenticated")
     .on(homePage, products, pause(minPauseSec, maxPauseSec), feed(productsFeeder), search)
 
 // Define adding a product to the cart
+// Reference: https://fasterxml.github.io/jackson-databind/javadoc/2.15/
 val addToCart: ChainBuilder = group("addToCart")
     .on(
         exec { session ->
