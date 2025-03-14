@@ -8,6 +8,7 @@ import java.util.Optional
 
 
 // Add authentication header if an access token exists in the session
+// Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/#header
 fun withAuthenticationHeader(protocolBuilder: HttpProtocolBuilder): HttpProtocolBuilder {
     return protocolBuilder.header("Authorization") { session ->
         Optional.ofNullable(session.getString(ACCESS_TOKEN)).orElse("")
@@ -15,6 +16,8 @@ fun withAuthenticationHeader(protocolBuilder: HttpProtocolBuilder): HttpProtocol
 }
 
 // Define session retrieval endpoint with response validation and data extraction
+// Reference: https://docs.gatling.io/reference/script/core/checks/#validating
+// Reference: https://docs.gatling.io/reference/script/core/checks/#extracting
 val session: HttpRequestActionBuilder = http("Session")
     .get("/session")
     .check(status().`is`(200))
@@ -28,6 +31,7 @@ val products: HttpRequestActionBuilder = http("Product page: #{${PAGE_INDEX}}")
     .check(jmesPath("products").saveAs(PRODUCTS))
 
 // Define login request
+// Reference: https://docs.gatling.io/reference/script/protocols/http/request/#forms
 val login: HttpRequestActionBuilder = http("Login")
     .post("/login")
     .asFormUrlEncoded()
@@ -43,6 +47,7 @@ val search: HttpRequestActionBuilder = http("Search")
     .check(status().`is`(200))
 
 // Define the "Add to Cart" request with a JSON payload
+// Reference: https://docs.gatling.io/reference/script/protocols/http/request/#elfilebody
 val cart: HttpRequestActionBuilder = http("Add to Cart")
     .post("/cart")
     .asJson()

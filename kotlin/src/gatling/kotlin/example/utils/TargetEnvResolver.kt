@@ -8,7 +8,6 @@ data class EnvInfo(
     val productsFeederFile: String
 )
 
-// Object to resolve environment-specific configuration based on the target environment
 object TargetEnvResolver {
 
     // Resolve environment-specific configuration based on the target environment
