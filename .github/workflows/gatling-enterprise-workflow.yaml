@@ -38,4 +38,7 @@ jobs:
           node-version: 18
       - name: Deploy Gatling Enterprise Package & Simulation JS
         if: steps.filter.outputs.js == 'true'
+        run: npm install
+      - name: Deploy Gatling Enterprise Package & Simulation JS
+        if: steps.filter.outputs.js == 'true'
         run: npx gatling enterprise-deploy
