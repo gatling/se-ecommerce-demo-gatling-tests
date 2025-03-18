@@ -1,0 +1,41 @@
+name: Gatling Enterprise CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  GATLING_ENTERPRISE_API_TOKEN: ${{ secrets.API_TOKEN }}
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect Changed Paths
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            java-maven:
+            - 'java/**'
+            js:
+            - 'javascript/**'
+      - uses: actions/setup-java@v4
+        if: steps.filter.outputs.java-maven == 'true'
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+          cache: 'maven'
+      - name: Deploy Gatling Enterprise Package & Simulation Java
+        if: steps.filter.outputs.java-maven == 'true'
+        run: mvn gatling:enterpriseDeploy
+      - uses: actions/setup-node@v4
+        if: steps.filter.outputs.js == 'true'
+        with:
+          node-version: 18
+      - name: Deploy Gatling Enterprise Package & Simulation JS
+        if: steps.filter.outputs.js == 'true'
+        run: npx gatling enterprise-deploy

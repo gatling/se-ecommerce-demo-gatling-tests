@@ -15,6 +15,8 @@ export default simulation((setUp) => {
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0"
     );
 
+    
+
   // Define scenario
   // Reference: https://docs.gatling.io/reference/script/core/scenario/
   const scn = scenario("Scenario").exec(http("Session").get("/session"));
