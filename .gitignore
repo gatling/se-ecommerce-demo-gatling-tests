@@ -3,8 +3,9 @@
 /kotlin/build
 /kotlin/.idea
 /java/target
-/scala/project
-/scala/target
+/scala/sbt/project
+/scala/sbt/target
+/scala/maven/target
 /javascript/target
 /javascript/node_modules
 /typescript/target

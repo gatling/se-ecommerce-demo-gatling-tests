@@ -1,0 +1,6 @@
+{
+    "sessionId": "#{SessionId}",
+    "cart": [
+        #{CartItems}
+    ]
+}
