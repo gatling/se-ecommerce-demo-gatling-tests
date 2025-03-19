@@ -1,7 +1,7 @@
-/kotlin/target
-/kotlin/.gradle
-/kotlin/build
-/kotlin/.idea
+/kotlin/gradle/target
+/kotlin/gradle/.gradle
+/kotlin/gradle/build
+/kotlin/gradle/.idea
 /java/target
 /scala/project
 /scala/target
