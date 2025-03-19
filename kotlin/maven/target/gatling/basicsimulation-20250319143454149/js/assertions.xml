@@ -1,5 +1,0 @@
-<testsuite name="example.BasicSimulation" tests="1" errors="0" failures="0" time="0">
-  <testcase name="Global: count of failed events is less than 1.0" status="true" time="0">
-  <system-out>Global: count of failed events is less than 1.0</system-out>
-</testcase>
-</testsuite>
