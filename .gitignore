@@ -2,7 +2,7 @@
 /kotlin/.gradle
 /kotlin/build
 /kotlin/.idea
-/java/target
+/java/maven/target
 /scala/project
 /scala/target
 /javascript/target
