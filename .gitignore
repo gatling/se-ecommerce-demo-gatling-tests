@@ -3,7 +3,11 @@
 /kotlin/build
 /kotlin/.idea
 
-/java/target
+/java/maven/target
+
+/java/gradle/target
+/java/gradle/.gradle
+/java/gradle/build
 
 /scala/sbt/project/project
 /scala/sbt/project/target

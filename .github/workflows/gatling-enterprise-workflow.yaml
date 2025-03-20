@@ -20,7 +20,7 @@ jobs:
         with:
           filters: |
             java-maven:
-            - 'java/**'
+            - 'java/maven/**'
             js:
             - 'javascript/**'
       - uses: actions/setup-java@v4
@@ -31,7 +31,7 @@ jobs:
           cache: 'maven'
       - name: Deploy Gatling Enterprise Package & Simulation Java
         if: steps.filter.outputs.java-maven == 'true'
-        working-directory: java
+        working-directory: java/maven
         run: mvn gatling:enterpriseDeploy
       - uses: actions/setup-node@v4
         if: steps.filter.outputs.js == 'true'

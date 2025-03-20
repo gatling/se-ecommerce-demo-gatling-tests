@@ -6,7 +6,12 @@ updates:
       interval: "weekly"
       day: "sunday"
   - package-ecosystem: "maven"
-    directory: "/java"
+    directory: "/java/maven"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+  - package-ecosystem: "gradle"
+    directory: "/java/gradle"
     schedule:
       interval: "weekly"
       day: "sunday"
