@@ -1,7 +1,10 @@
-/kotlin/target
-/kotlin/.gradle
-/kotlin/build
-/kotlin/.idea
+/kotlin/gradle/target
+/kotlin/gradle/.gradle
+/kotlin/gradle/build
+/kotlin/gradle/.idea
+
+/kotlin/maven/target
+/kotlin/maven/.mvn/wrapper/*.jar
 
 /java/maven/target
 
