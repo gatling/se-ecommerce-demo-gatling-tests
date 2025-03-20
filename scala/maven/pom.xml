@@ -15,7 +15,6 @@
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <scala.version>2.13.16</scala.version> 
     <scala-maven-plugin.version>4.9.2</scala-maven-plugin.version>
   </properties>
 
@@ -28,7 +27,7 @@
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-scala_3</artifactId>
+      <artifactId>jackson-module-scala_2.13</artifactId>
       <version>2.18.3</version>
     </dependency>
   </dependencies>
@@ -67,7 +66,6 @@
                 <arg>-unchecked</arg>
                 <arg>-language:implicitConversions</arg>
                 <arg>-language:postfixOps</arg>
-                <arg>-Ytasty-reader</arg>
               </args>
             </configuration>
           </execution>
