@@ -28,6 +28,7 @@
 /scala/gradle/.gradle
 /scala/gradle/buildsc
 /scala/gradle/build
+/scala/gradle/bin
 
 /javascript/target
 /javascript/node_modules
