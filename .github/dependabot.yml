@@ -25,3 +25,13 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
+  - package-ecosystem: "maven"
+    directory: "/scala/maven"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+  - package-ecosystem: "gradle"
+    directory: "/scala/gradle"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
