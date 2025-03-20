@@ -7,6 +7,7 @@
 /kotlin/maven/.mvn/wrapper/*.jar
 
 /java/maven/target
+/java/maven/.mvn/wrapper/*.jar
 
 /java/gradle/target
 /java/gradle/.gradle
