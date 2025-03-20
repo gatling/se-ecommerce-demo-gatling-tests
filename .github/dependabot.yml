@@ -21,7 +21,12 @@ updates:
       interval: "weekly"
       day: "sunday"
   - package-ecosystem: "gradle"
-    directory: "/kotlin"
+    directory: "/kotlin/gradle"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+  - package-ecosystem: "maven"
+    directory: "/kotlin/maven"
     schedule:
       interval: "weekly"
       day: "sunday"
