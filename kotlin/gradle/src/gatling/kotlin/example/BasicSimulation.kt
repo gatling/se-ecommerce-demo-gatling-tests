@@ -14,7 +14,8 @@ class BasicSimulation : Simulation() {
     private val httpProtocol: HttpProtocolBuilder = http
         .baseUrl("https://api-ecomm.gatling.io")
         .acceptHeader("application/json")
-        .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0")
+        .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+)
 
     // Define scenario
     private val scenario: ScenarioBuilder = scenario("Scenario")
