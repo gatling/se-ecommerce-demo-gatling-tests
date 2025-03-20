@@ -3,6 +3,7 @@
 /kotlin/gradle/build
 /kotlin/gradle/.idea
 /kotlin/maven/target
+/kotlin/maven/.mvn/wrapper/*.jar
 /java/target
 /scala/project
 /scala/target
