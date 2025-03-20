@@ -14,10 +14,12 @@
 /scala/sbt/.project
 
 /scala/maven/target
+/scala/maven/.mvn/wrapper/*.jar
 
 /scala/gradle/target
 /scala/gradle/.gradle
 /scala/gradle/buildsc
+/scala/gradle/build
 
 /javascript/target
 /javascript/node_modules
