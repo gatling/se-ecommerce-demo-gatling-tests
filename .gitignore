@@ -6,6 +6,9 @@
 /scala/sbt/project
 /scala/sbt/target
 /scala/maven/target
+/scala/gradle/target
+/scala/gradle/.gradle
+/scala/gradle/build
 /javascript/target
 /javascript/node_modules
 /typescript/target
