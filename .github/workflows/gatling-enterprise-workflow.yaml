@@ -40,8 +40,6 @@ jobs:
       - name: Deploy Gatling Enterprise Package & Simulation JS
         if: steps.filter.outputs.js == 'true'
         working-directory: javascript
-        run: npm install
-      - name: Deploy Gatling Enterprise Package & Simulation JS
-        if: steps.filter.outputs.js == 'true'
-        working-directory: javascript
-        run: npx gatling enterprise-deploy
+        run: |
+          npm install && \
+          npx gatling enterprise-deploy

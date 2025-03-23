@@ -25,7 +25,6 @@ jobs:
           node-version: 18
       - name: Deploy Gatling Enterprise Package & Simulation JS
         working-directory: javascript
-        run: npm install
-      - name: Deploy Gatling Enterprise Package & Simulation JS
-        working-directory: javascript
-        run: npx gatling enterprise-deploy
+        run: |
+          npm install && \
+          npx gatling enterprise-deploy
