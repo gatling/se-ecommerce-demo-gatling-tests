@@ -1,0 +1,31 @@
+name: Manual Trigger Gatling Enterprise CI/CD
+
+on:
+  workflow_dispatch:
+
+env:
+  GATLING_ENTERPRISE_API_TOKEN: ${{ secrets.API_TOKEN }}
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+          cache: 'maven'
+      - name: Deploy Gatling Enterprise Package & Simulation Java
+        working-directory: java/maven
+        run: mvn gatling:enterpriseDeploy
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Deploy Gatling Enterprise Package & Simulation JS
+        working-directory: javascript
+        run: npm install
+      - name: Deploy Gatling Enterprise Package & Simulation JS
+        working-directory: javascript
+        run: npx gatling enterprise-deploy
