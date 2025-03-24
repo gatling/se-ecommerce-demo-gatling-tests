@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '21'
+          java-version: '11'
           cache: 'maven'
       - name: Deploy Gatling Enterprise Package & Simulation Java
         working-directory: java/maven
