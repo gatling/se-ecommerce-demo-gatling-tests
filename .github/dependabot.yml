@@ -45,3 +45,13 @@ updates:
     schedule:
       interval: "weekly"
       day: "sunday"
+  - package-ecosystem: "npm"
+    directory: "/postman/javascript"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+  - package-ecosystem: "npm"
+    directory: "/postman/typescript"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
