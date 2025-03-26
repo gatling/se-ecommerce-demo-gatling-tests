@@ -37,7 +37,10 @@
 
 /postman/javascript/node_modules/
 /postman/javascript/target/
+/postman/typescript/node_modules/
+/postman/typescript/target/
 results/
 
 
 settings.json
+.DS_Store
