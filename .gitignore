@@ -35,4 +35,9 @@
 /typescript/target
 /typescript/node_modules
 
+/postman/javascript/node_modules/
+/postman/javascript/target/
+results/
+
+
 settings.json
