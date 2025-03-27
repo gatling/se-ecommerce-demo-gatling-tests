@@ -1,10 +1,14 @@
 import { status } from "@gatling.io/http";
 import { postman } from "@gatling.io/postman";
 
+// Define the postman collection with its corresponding environment
+// Reference: https://docs.gatling.io/reference/script/protocols/postman/#import-collections
 const collection = postman
   .fromResource("gatlingEcommerce.postman_collection.json")
   .environment("gatlingEcommerce.postman_environment.json");
 
+// Define the web endpoints by referencing the corresponding folder in the postman collection
+// Reference: https://docs.gatling.io/reference/script/protocols/postman/#create-gatling-requests-and-scenarios
 const webEndpoints = collection.folder("Web Endpoints");
 
 // Define the home page request with response status validation

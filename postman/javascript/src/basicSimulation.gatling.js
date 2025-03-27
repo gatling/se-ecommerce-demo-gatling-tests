@@ -7,8 +7,13 @@ export default simulation((setUp) => {
   // Reference: https://docs.gatling.io/guides/passing-parameters/
   const vu = parseInt(getParameter("vu", "1"));
 
+  // Define HTTP protocol without any configuration
+  // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
+  // Reference: https://docs.gatling.io/reference/script/protocols/postman/#dsl-overview
   const httpProtocol = http;
 
+  // Define the postman collection with its corresponding environment
+  // Reference: https://docs.gatling.io/reference/script/protocols/postman/#import-collections
   const collection = postman
     .fromResource("gatlingEcommerce.postman_collection.json")
     .environment("gatlingEcommerce.postman_environment.json");
@@ -16,6 +21,7 @@ export default simulation((setUp) => {
   // Define scenario
   // Reference: https://docs.gatling.io/reference/script/core/scenario/
   const scn = scenario("Scenario").exec(
+    // Call the authentication endpoint by referencing the corresponding [folder > subfolders > request] in the postman collection
     collection.folder("API Endpoints").folder("Authentication").request("Create User Session")
   );
 
