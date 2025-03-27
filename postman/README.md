@@ -41,6 +41,6 @@ npm run clean # Delete Gatling bundled code and generated reports
 npm run format # Format code with prettier
 npm run check # TypeScript project only, type check but don't build or run
 npm run build # Build project but don't run
-npm run computerdatabase # Run the included computerdatabase simulation
+npm run basicSimulation # Run the included basic simulation
+npm run advancedSimulation # Run the included advanced simulation
 ```
-
