@@ -20,6 +20,7 @@
     "format": "prettier --write \"**/*.ts\"",
     "check": "tsc --noEmit",
     "build": "tsc --noEmit && gatling build --typescript",
-    "computerdatabase": "tsc --noEmit && gatling run --typescript --simulation computerdatabase"
+    "basicSimulation": "tsc --noEmit && gatling run --typescript --simulation basicSimulation",
+    "advancedSimulation": "tsc --noEmit && gatling run --typescript --simulation advancedSimulation"
   }
 }
