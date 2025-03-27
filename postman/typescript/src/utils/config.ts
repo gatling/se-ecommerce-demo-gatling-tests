@@ -6,8 +6,8 @@ export const targetEnv = getParameter("targetEnv", "DEV");
 
 // Load testing configuration
 export const vu = parseInt(getParameter("vu", "1"));
-export const duration = parseInt(getParameter("durationMinutes", 1));
-export const ramp_duration = parseInt(getParameter("rampDurationMinutes", 1));
+export const duration = parseInt(getParameter("durationMinutes", "1"));
+export const ramp_duration = parseInt(getParameter("rampDurationMinutes", "1"));
 export const minPauseSec = parseInt(getParameter("minPauseSec", "5"));
 export const maxPauseSec = parseInt(getParameter("maxPauseSec", "15"));
 export const testType = getParameter("testType", "stress");
