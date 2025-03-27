@@ -52,56 +52,7 @@
 							"name": "Create User Session",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "accept-language",
-										"value": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
-									},
-									{
-										"key": "origin",
-										"value": "https://ecomm.gatling.io"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://ecomm.gatling.io/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-									}
-								],
+								"header": [],
 								"url": {
 									"raw": "{{baseUrl}}/session",
 									"host": [
@@ -118,60 +69,7 @@
 							"name": "User login",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "accept-language",
-										"value": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
-									},
-									{
-										"key": "content-type",
-										"value": "application/x-www-form-urlencoded"
-									},
-									{
-										"key": "origin",
-										"value": "https://ecomm.gatling.io"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://ecomm.gatling.io/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "urlencoded",
 									"urlencoded": [
@@ -208,58 +106,9 @@
 							"name": "Get Products",
 							"request": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "accept-language",
-										"value": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
-									},
-									{
-										"key": "origin",
-										"value": "https://ecomm.gatling.io"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://ecomm.gatling.io/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-									}
-								],
+								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/products?page=0&search=",
+									"raw": "{{baseUrl}}/products?page={{page}}&search={{search}}",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -269,11 +118,11 @@
 									"query": [
 										{
 											"key": "page",
-											"value": "0"
+											"value": "{{page}}"
 										},
 										{
 											"key": "search",
-											"value": ""
+											"value": "{{search}}"
 										}
 									]
 								}
@@ -289,67 +138,10 @@
 							"name": "Add to cart",
 							"request": {
 								"method": "POST",
-								"header": [
-									{
-										"key": "accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "accept-language",
-										"value": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
-									},
-									{
-										"key": "authorization",
-										"value": "Heff3hKGkEPD4cPGYzwL3tR07MjcUm5cpFDgxTJG1534bZ2yD0u3xkBzJFQzW1Zw"
-									},
-									{
-										"key": "content-type",
-										"value": "application/json"
-									},
-									{
-										"key": "origin",
-										"value": "https://ecomm.gatling.io"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://ecomm.gatling.io/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"sessionId\":\"f7r9s666dqu3p649yy5an\",\"cart\":[{\"id\":0,\"name\":\"Pink Throwback Hip Bag\",\"color\":\"Pink\",\"price\":32,\"quantity\":1,\"imageSrc\":\"sm-bag-pink.webp\",\"imageAlt\":\"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"}]}",
+									"raw": "{\n  \"sessionId\": \"f7r9s666dqu3p649yy5an\",\n  \"cart\": [\n    {\n      \"id\": 0,\n      \"name\": \"Pink Throwback Hip Bag\",\n      \"color\": \"Pink\",\n      \"price\": 32,\n      \"quantity\": 1,\n      \"imageSrc\": \"sm-bag-pink.webp\",\n      \"imageAlt\": \"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -379,65 +171,13 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "accept",
-										"value": "application/json, text/plain, */*"
-									},
-									{
-										"key": "accept-language",
-										"value": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7"
-									},
-									{
 										"key": "authorization",
 										"value": "Heff3hKGkEPD4cPGYzwL3tR07MjcUm5cpFDgxTJG1534bZ2yD0u3xkBzJFQzW1Zw"
-									},
-									{
-										"key": "content-type",
-										"value": "application/json"
-									},
-									{
-										"key": "origin",
-										"value": "https://ecomm.gatling.io"
-									},
-									{
-										"key": "priority",
-										"value": "u=1, i"
-									},
-									{
-										"key": "referer",
-										"value": "https://ecomm.gatling.io/"
-									},
-									{
-										"key": "sec-ch-ua",
-										"value": "\"Chromium\";v=\"134\", \"Not:A-Brand\";v=\"24\", \"Google Chrome\";v=\"134\""
-									},
-									{
-										"key": "sec-ch-ua-mobile",
-										"value": "?0"
-									},
-									{
-										"key": "sec-ch-ua-platform",
-										"value": "\"macOS\""
-									},
-									{
-										"key": "sec-fetch-dest",
-										"value": "empty"
-									},
-									{
-										"key": "sec-fetch-mode",
-										"value": "cors"
-									},
-									{
-										"key": "sec-fetch-site",
-										"value": "same-site"
-									},
-									{
-										"key": "user-agent",
-										"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\"sessionId\":\"f7r9s666dqu3p649yy5an\",\"cart\":[{\"id\":0,\"name\":\"Pink Throwback Hip Bag\",\"color\":\"Pink\",\"price\":32,\"quantity\":1,\"imageSrc\":\"sm-bag-pink.webp\",\"imageAlt\":\"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"}]}",
+									"raw": "{\n  \"sessionId\": \"f7r9s666dqu3p649yy5an\",\n  \"cart\": [\n    {\n      \"id\": 0,\n      \"name\": \"Pink Throwback Hip Bag\",\n      \"color\": \"Pink\",\n      \"price\": 32,\n      \"quantity\": 1,\n      \"imageSrc\": \"sm-bag-pink.webp\",\n      \"imageAlt\": \"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
