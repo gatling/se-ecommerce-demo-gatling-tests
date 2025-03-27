@@ -1,4 +1,4 @@
-import { group, feed, exec, pause } from "@gatling.io/core";
+import { group, pause } from "@gatling.io/core";
 import { session, login, search, cart, products, checkOut } from "../endpoints/apiEndpoints";
 import { homePage, loginPage } from "../endpoints/webEndpoints";
 import { maxPauseSec, minPauseSec } from "../utils/config";

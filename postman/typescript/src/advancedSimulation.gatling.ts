@@ -25,13 +25,7 @@ import {
   ramp_duration,
   testType
 } from "./utils/config";
-import {
-  addToCart,
-  authenticate,
-  buy,
-  homeAnonymous,
-  homeAuthenticated
-} from "./groups/scenarioGroups";
+import { addToCart, authenticate, homeAnonymous, homeAuthenticated } from "./groups/scenarioGroups";
 
 export default simulation((setUp) => {
   // Define HTTP protocol configuration with authentication header
