@@ -14,7 +14,7 @@ Run the typeScript sample:
 ```shell
 cd typescript
 npm install
-npx gatling run --typescript --simulation computerdatabase # automatically download Gatling runtime, build the project, and run the computerdatabase simulation
+npx gatling run --typescript --simulation basicSimulation # automatically download Gatling runtime, build the project, and run the basic ecomm simulation
 ```
 
 Or the JavaScript sample:
@@ -22,7 +22,7 @@ Or the JavaScript sample:
 ```shell
 cd javascript
 npm install
-npx gatling run --simulation computerdatabase # automatically download Gatling runtime, build the project, and run the computerdatabase simulation
+npx gatling run --simulation basicSimulation # automatically download Gatling runtime, build the project, and run the basic ecomm simulation
 ```
 
 The `gatling` command-line tool has a built-in help function:
