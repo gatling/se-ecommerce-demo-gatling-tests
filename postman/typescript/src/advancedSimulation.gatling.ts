@@ -28,8 +28,9 @@ import {
 import { addToCart, authenticate, homeAnonymous, homeAuthenticated } from "./groups/scenarioGroups";
 
 export default simulation((setUp) => {
-  // Define HTTP protocol configuration with authentication header
+  // Define HTTP protocol without any configuration
   // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
+  // Reference: https://docs.gatling.io/reference/script/protocols/postman/#dsl-overview
   const httpProtocol = http;
 
   // Define scenario 1 with a random traffic distribution
