@@ -1,4 +1,11 @@
 import { getParameter } from "@gatling.io/core";
+import { postman } from "@gatling.io/postman";
+
+// Define the postman collection with its corresponding environment
+// Reference: https://docs.gatling.io/reference/script/protocols/postman/#import-collections
+export const collection = postman
+  .fromResource("gatlingEcommerce.postman_collection.json")
+  .environment("gatlingEcommerce.postman_environment.json");
 
 // Define the target environment (default: DEV)
 // Reference: https://docs.gatling.io/guides/passing-parameters/#javascript
