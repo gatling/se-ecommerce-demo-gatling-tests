@@ -17,5 +17,5 @@ repositories {
 }
 
 dependencies {
-    gatlingImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.18.3")
+    gatlingImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.19.0")
 }
