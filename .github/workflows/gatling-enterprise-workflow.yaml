@@ -3,7 +3,7 @@ name: Gatling Enterprise CI/CD
 on:
   push:
     branches:
-      - main
+      main: gatling-enterprise-workflow.yaml
 
 env:
   GATLING_ENTERPRISE_API_TOKEN: ${{ secrets.API_TOKEN }}
