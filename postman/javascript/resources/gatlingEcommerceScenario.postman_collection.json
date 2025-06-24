@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "cb607acd-0c62-4903-8a63-0d7867ac4c2d",
+		"name": "Gatling E-commerce Scenario Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32925743",
+		"_collection_link": "https://gatling-team.postman.co/workspace/9071299d-fafa-4859-89dc-63af494308e3/collection/32925743-cb607acd-0c62-4903-8a63-0d7867ac4c2d?action=share&source=collection_link&creator=32925743"
+	},
+	"item": [
+		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pageUrl}}",
+					"host": [
+						"{{pageUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Session",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/session",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?page={{page}}&search={{search}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{page}}"
+						},
+						{
+							"key": "search",
+							"value": "{{search}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pageUrl}}/login",
+					"host": [
+						"{{pageUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "gatling",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home Page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{pageUrl}}",
+					"host": [
+						"{{pageUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products?page={{page}}&search={{search}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "{{page}}"
+						},
+						{
+							"key": "search",
+							"value": "{{search}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add to cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sessionId\": \"f7r9s666dqu3p649yy5an\",\n  \"cart\": [\n    {\n      \"id\": 0,\n      \"name\": \"Pink Throwback Hip Bag\",\n      \"color\": \"Pink\",\n      \"price\": 32,\n      \"quantity\": 1,\n      \"imageSrc\": \"sm-bag-pink.webp\",\n      \"imageAlt\": \"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cart",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Heff3hKGkEPD4cPGYzwL3tR07MjcUm5cpFDgxTJG1534bZ2yD0u3xkBzJFQzW1Zw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sessionId\": \"f7r9s666dqu3p649yy5an\",\n  \"cart\": [\n    {\n      \"id\": 0,\n      \"name\": \"Pink Throwback Hip Bag\",\n      \"color\": \"Pink\",\n      \"price\": 32,\n      \"quantity\": 1,\n      \"imageSrc\": \"sm-bag-pink.webp\",\n      \"imageAlt\": \"Front of satchel with pink canvas body, pink straps and handle, drawstring top, and front zipper pouch.\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/checkout",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
