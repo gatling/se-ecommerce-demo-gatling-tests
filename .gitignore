@@ -2,6 +2,7 @@
 /kotlin/gradle/.gradle
 /kotlin/gradle/build
 /kotlin/gradle/.idea
+/kotlin/gradle/bin
 
 /kotlin/maven/target
 /kotlin/maven/.mvn/wrapper/*.jar
@@ -12,6 +13,7 @@
 /java/gradle/target
 /java/gradle/.gradle
 /java/gradle/build
+/java/gradle/bin
 
 /scala/sbt/project/project
 /scala/sbt/project/target
