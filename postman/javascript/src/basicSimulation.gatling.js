@@ -7,31 +7,25 @@ export default simulation((setUp) => {
   const vu = parseInt(getParameter("vu", "1"));
 
   // Define the postman collection with its corresponding environment
-  // Reference: https://docs.gatling.io/reference/script/protocols/postman/#import-collections
+  // Reference: https://docs.gatling.io/integrations/postman/#import-collections
   const collection = postman
-    .fromResource("gatlingEcommerce.postman_collection.json")
+    .fromResource("gatlingEcommerceScenario.postman_collection.json")
     .environment("gatlingEcommerce.postman_environment.json");
 
-  // Define HTTP protocol without any configuration
-  // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
+  // Define Postman protocol without any configuration
   // Reference: https://docs.gatling.io/reference/script/protocols/postman/#dsl-overview
   const basePostmanProtocol = postmanProtocol(collection);
 
   // Define scenario
-  // Reference: https://docs.gatling.io/reference/script/core/scenario/
-  const scn = scenario("Scenario").exec(
-    // Initialize the Postman scoped variables. This is not automated yet, expect when using collection.scenario().
-    collection.initVariables,
-    // Call the authentication endpoint by referencing the corresponding [folder > subfolders > request] in the postman collection
-    collection.folder("API Endpoints").folder("Authentication").request("Create User Session")
-  );
+  // Reference: https://docs.gatling.io/integrations/postman/#create-gatling-requests-and-scenarios
+  const scn = collection.scenario("Gatling Ecomm", { recursive: true });
 
   // Define assertions
-  // Reference: https://docs.gatling.io/reference/script/core/assertions/
+  // Reference: https://docs.gatling.io/concepts/assertions/
   const assertion = global().failedRequests().count().lt(1.0);
 
   // Define injection profile and execute the test
-  // Reference: https://docs.gatling.io/reference/script/core/injection/
+  // Reference: https://docs.gatling.io/concepts/injection/
   setUp(scn.injectOpen(atOnceUsers(vu)))
     .assertions(assertion)
     .protocols(basePostmanProtocol);
