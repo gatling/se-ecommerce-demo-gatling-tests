@@ -29,8 +29,7 @@ import {
 import { addToCart, authenticate, homeAnonymous, homeAuthenticated } from "./groups/scenarioGroups";
 
 export default simulation((setUp) => {
-  // Define HTTP protocol without any configuration
-  // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
+  // Define Postman protocol without any configuration
   // Reference: https://docs.gatling.io/reference/script/protocols/postman/#dsl-overview
   const basePostmanProtocol = postmanProtocol(collection);
 
@@ -38,7 +37,7 @@ export default simulation((setUp) => {
   // Reference: https://docs.gatling.io/reference/script/core/scenario/#randomswitch
   const scn1 = scenario("Scenario 1")
     .exec(
-      // Initialize the Postman scoped variables. This is not automated yet, expect when using collection.scenario().
+      // Initialize the Postman scoped variables. This is not automated yet, except when using collection.scenario().
       collection.initVariables,
     )
     .exitBlockOnFail()
@@ -103,7 +102,7 @@ export default simulation((setUp) => {
     .exitHereIfFailed();
 
   // Define different load injection profiles
-  // Reference: https://docs.gatling.io/reference/script/core/injection/
+  // Reference: https://docs.gatling.io/concepts/injection/
   const injectionProfile = (scn: ScenarioBuilder) => {
     switch (testType) {
       case "capacity":
@@ -137,7 +136,7 @@ export default simulation((setUp) => {
   };
 
   // Define assertions for different test types
-  // Reference: https://docs.gatling.io/reference/script/core/assertions/
+  // Reference: https://docs.gatling.io/concepts/assertions/
   const assertions = [
     global().responseTime().percentile(90.0).lt(500),
     global().failedRequests().percent().lt(5.0)
