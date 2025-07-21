@@ -24,7 +24,7 @@ repositories {
 }
 
 dependencies {
-  gatling 'com.fasterxml.jackson.module:jackson-module-scala_2.13:2.19.1'
+  gatling 'com.fasterxml.jackson.module:jackson-module-scala_2.13:2.19.2'
 }
 
 spotless {
