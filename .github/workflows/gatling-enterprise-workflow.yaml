@@ -23,7 +23,7 @@ jobs:
             - 'java/maven/**'
             js:
             - 'javascript/**'
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         if: steps.filter.outputs.java-maven == 'true'
         with:
           distribution: 'zulu'
