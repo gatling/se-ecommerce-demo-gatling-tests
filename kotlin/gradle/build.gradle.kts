@@ -3,7 +3,7 @@ plugins {
     kotlin("plugin.allopen") version "2.2.10"
     id("com.diffplug.spotless") version "7.2.1"
     // The following line allows to load io.gatling.gradle plugin and directly apply it
-    id("io.gatling.gradle") version "3.14.3.5"
+    id("io.gatling.gradle") version "3.14.3.7"
 }
 
 group = "example"
