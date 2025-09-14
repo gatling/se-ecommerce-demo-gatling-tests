@@ -14,7 +14,7 @@
     <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
     <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
     <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-    <kotlin.version>2.2.10</kotlin.version>
+    <kotlin.version>2.2.20</kotlin.version>
     <spotless-maven-plugin.version>2.46.1</spotless-maven-plugin.version>
   </properties>
 
