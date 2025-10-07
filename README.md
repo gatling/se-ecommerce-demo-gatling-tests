@@ -1,6 +1,6 @@
 # Gatling Load Testing for eCommerce Application
 
-![Gatling-Logo](https://github.com/user-attachments/assets/51bb03d3-92d6-4a79-840f-35f909806015)
+[<picture><source media="(prefers-color-scheme: dark)" srcset="https://docs.gatling.io/images/logo-gatling.svg"><img src="https://docs.gatling.io/images/logo-gatling-noir.svg" alt="Gatling" width="50%"></picture>](https://gatling.io)
 
 
 This repository contains load testing projects for an eCommerce application using Gatling. It showcases examples in both Java (using Maven), Javascript (using NPM), and  TypeScript (using NPM). The application under test is hosted at [https://ecomm.gatling.io](https://ecomm.gatling.io).
