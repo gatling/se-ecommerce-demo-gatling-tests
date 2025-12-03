@@ -6,6 +6,16 @@ plugins {
     id("io.gatling.gradle") version "3.14.9"
 }
 
+tasks.withType(JavaCompile::class) {
+  options.release.set(21)
+}
+
+kotlin {
+  compilerOptions {
+    jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+  }
+}
+
 group = "example"
 
 gatling {
