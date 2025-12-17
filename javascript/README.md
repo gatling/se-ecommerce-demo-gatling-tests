@@ -4,7 +4,7 @@ A simple showcase of Javascript NPM projects using Gatling JS. Please also check
 
 ## Prerequisites
 
-You need [Node.js](https://nodejs.org/en/download) v18 or later (LTS versions only) and npm v8 or later (included with Node.js).
+You need [Node.js](https://nodejs.org/en/download) v20 or later (LTS versions only) and npm v10 or later (included with Node.js).
 
 ## Use ecommerce project
 
