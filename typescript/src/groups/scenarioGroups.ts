@@ -1,8 +1,8 @@
 import { group, jsonFile, feed, exec, pause, csv } from "@gatling.io/core";
 import { session, login, search, cart, products, checkOut } from "../endpoints/apiEndpoints";
 import { homePage, loginPage } from "../endpoints/webEndpoints";
-import { maxPauseSec, minPauseSec, productsFeederFile } from "src/utils/config";
-import { CART_ITEMS, PAGE_INDEX, PRODUCTS } from "src/utils/keys";
+import { maxPauseSec, minPauseSec, productsFeederFile } from "../utils/config";
+import { CART_ITEMS, PAGE_INDEX, PRODUCTS } from "../utils/keys";
 
 // Define a feeder for user data
 // Reference: https://docs.gatling.io/reference/script/core/feeder/
