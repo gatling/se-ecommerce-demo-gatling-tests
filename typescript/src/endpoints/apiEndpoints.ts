@@ -1,6 +1,6 @@
 import { ElFileBody, jmesPath } from "@gatling.io/core";
 import { HttpProtocolBuilder, http, status } from "@gatling.io/http";
-import { ACCESS_TOKEN, PAGE_INDEX, PRODUCT_NAME, PRODUCTS, SESSION_ID } from "src/utils/keys";
+import { ACCESS_TOKEN, PAGE_INDEX, PRODUCT_NAME, PRODUCTS, SESSION_ID } from "../utils/keys";
 
 interface Session {
   contains(key: string): boolean;
