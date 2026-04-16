@@ -8,20 +8,14 @@ You need [Node.js](https://nodejs.org/en/download) v20 or later (LTS versions on
 
 ## Use ecommerce project
 
-Run the typeScript sample:
+Run the TypeScript sample:
 
 ```shell
 npm install
-npx gatling run --typescript --simulation appSimulationA # automatically download Gatling runtime, build the project, and run the appSimulationA simulation
+npx gatling run --simulation basic # automatically download Gatling runtime, build the project, and run the basic simulation
 ```
 
-You can also launch the simulation with an Alias.
-
-```shell
-npm gatling run --typescript simA # automatically download Gatling runtime, build the project, and run the simA alias.
-```
-
-You can also launch the [Gatling Recorder](https://docs.gatling.io/tutorials/recorder/) and use it to capture browser-based actions and help create a realistic user scenario:
+You can launch the [Gatling Recorder](https://docs.gatling.io/tutorials/recorder/) and use it to capture browser-based actions and help create a realistic user scenario:
 
 ```shell
 npx gatling recorder
@@ -41,8 +35,10 @@ Note that both sample projects include a few aliases in the `package.json`'s `sc
 ```shell
 npm run clean # Delete Gatling bundled code and generated reports
 npm run format # Format code with prettier
+npm run format-check # Check code format with prettier
 npm run check # TypeScript project only, type check but don't build or run
 npm run build # Build project but don't run
-npm run computerdatabase # Run the included computerdatabase simulation
 npm run recorder # Starts the Gatling Recorder
+npm run basic # Run the included basic simulation
+npm run advanced # Run the included advanced simulation
 ```

@@ -15,13 +15,12 @@
   },
   "scripts": {
     "clean": "rimraf target",
-    "format": "prettier --write \"**/*.ts\"",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
     "check": "tsc --noEmit",
     "build": "tsc --noEmit && gatling build --typescript",
     "recorder": "gatling recorder --typescript",
-    "basicSim": "gatling run --simulation=basicSimulation",
-    "advancedSim": "gatling run --simulation=advancedSimulation",
-    "package": "gatling enterprise-package",
-    "deploy": "gatling enterprise-deploy"
+    "basic": "gatling run --simulation=basic",
+    "advanced": "gatling run --simulation=advanced"
   }
 }

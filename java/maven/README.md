@@ -1,4 +1,4 @@
-Gatling plugin for Maven - Java ecommerce applcation load tests
+Gatling plugin for Maven - Java ecommerce application load tests
 ============================================
 
 A simple showcase of a Maven project using the Gatling plugin for Maven. Refer to the plugin documentation

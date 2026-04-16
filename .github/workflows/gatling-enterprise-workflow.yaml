@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
       - name: Detect Changed Paths
         id: filter
         uses: dorny/paths-filter@v4
@@ -23,21 +24,25 @@ jobs:
             - 'java/maven/**'
             js:
             - 'javascript/**'
+
       - uses: actions/setup-java@v5
         if: steps.filter.outputs.java-maven == 'true'
         with:
           distribution: 'zulu'
           java-version: '25'
           cache: 'maven'
-      - name: Deploy Gatling Enterprise Package & Simulation Java
+
+      - name: Deploy Java/Maven project
         if: steps.filter.outputs.java-maven == 'true'
         working-directory: java/maven
         run: mvn gatling:enterpriseDeploy
+
       - uses: actions/setup-node@v6
         if: steps.filter.outputs.js == 'true'
         with:
-          node-version: 18
-      - name: Deploy Gatling Enterprise Package & Simulation JS
+          node-version: 20
+
+      - name: Deploy JavaScript project
         if: steps.filter.outputs.js == 'true'
         working-directory: javascript
         run: |
