@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    gatlingImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.21.2")
+    gatlingImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.21.3")
 }
 
 spotless {
