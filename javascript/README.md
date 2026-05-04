@@ -1,6 +1,6 @@
 # Gatling JS - Javascript ecommerce application load tests
 
-A simple showcase of Javascript NPM projects using Gatling JS. Please also check out the [introduction to JavaScript scripting](https://docs.gatling.io/tutorials/scripting-intro-js/) in the Gatling documentation.
+A simple showcase of JavaScript NPM projects using Gatling JS. Please also check out the [introduction to JavaScript scripting](https://docs.gatling.io/tutorials/scripting-intro-js/) in the Gatling documentation.
 
 ## Prerequisites
 
@@ -8,17 +8,11 @@ You need [Node.js](https://nodejs.org/en/download) v20 or later (LTS versions on
 
 ## Use ecommerce project
 
-Run the Javascript sample:
+Run the JavaScript sample:
 
 ```shell
 npm install
-npx gatling run --simulation appSimulationA # automatically download Gatling runtime, build the project, and run the appSimulationA simulation
-```
-
-You can also launch the simulation with an Alias.
-
-```shell
-npm gatling run simA # automatically download Gatling runtime, build the project, and run the simA alias.
+npx gatling run --simulation basic # automatically download Gatling runtime, build the project, and run the basic simulation
 ```
 
 You can also launch the [Gatling Recorder](https://docs.gatling.io/tutorials/recorder/) and use it to capture browser-based actions and help create a realistic user scenario:
@@ -41,8 +35,9 @@ Note that both sample projects include a few aliases in the `package.json`'s `sc
 ```shell
 npm run clean # Delete Gatling bundled code and generated reports
 npm run format # Format code with prettier
-npm run check # Javascript project only, type check but don't build or run
+npm run format-check # Check code format with prettier
 npm run build # Build project but don't run
-npm run computerdatabase # Run the included computerdatabase simulation
 npm run recorder # Starts the Gatling Recorder
+npm run basic # Run the included basic simulation
+npm run advanced # Run the included advanced simulation
 ```

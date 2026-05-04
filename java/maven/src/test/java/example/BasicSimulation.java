@@ -3,6 +3,8 @@ package example;
 import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.*;
 
+import example.requests.Api;
+import example.requests.Web;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 
@@ -14,16 +16,16 @@ public class BasicSimulation extends Simulation {
 
   // Define HTTP configuration
   // Reference: https://docs.gatling.io/reference/script/protocols/http/protocol/
-  private static final HttpProtocolBuilder httpProtocol =
+  private static final HttpProtocolBuilder baseHttpProtocol =
       http.baseUrl("https://api-ecomm.gatling.io")
-          .acceptHeader("application/json")
           .userAgentHeader(
               "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36");
 
   // Define scenario
   // Reference: https://docs.gatling.io/reference/script/core/scenario/
   private static final ScenarioBuilder scenario =
-      scenario("Scenario").exec(http("Session").get("/session"));
+      scenario("Scenario")
+          .exec(Web.home, Api.session, exec(session -> session.set("pageIndex", 0)), Api.products);
 
   // Define assertions
   // Reference: https://docs.gatling.io/reference/script/core/assertions/
@@ -32,6 +34,6 @@ public class BasicSimulation extends Simulation {
   // Define injection profile and execute the test
   // Reference: https://docs.gatling.io/reference/script/core/injection/
   {
-    setUp(scenario.injectOpen(atOnceUsers(vu))).assertions(assertion).protocols(httpProtocol);
+    setUp(scenario.injectOpen(atOnceUsers(vu))).assertions(assertion).protocols(baseHttpProtocol);
   }
 }

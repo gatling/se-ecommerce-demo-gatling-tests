@@ -14,12 +14,11 @@
   },
   "scripts": {
     "clean": "rimraf target",
-    "format": "prettier --write \"**/*.js\"",
+    "format": "prettier --write '**/*.js'",
+    "format-check": "prettier --check '**/*.js'",
     "build": "gatling build",
     "recorder": "gatling recorder",
-    "basicSim": "gatling run --simulation=basicSimulation",
-    "advancedSim": "gatling run --simulation=advancedSimulation",
-    "package": "gatling enterprise-package",
-    "deploy": "gatling enterprise-deploy"
+    "basic": "gatling run --simulation=basic",
+    "advanced": "gatling run --simulation=advanced"
   }
 }

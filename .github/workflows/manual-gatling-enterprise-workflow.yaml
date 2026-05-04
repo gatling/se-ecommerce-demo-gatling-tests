@@ -12,18 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
       - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '25'
           cache: 'maven'
-      - name: Deploy Gatling Enterprise Package & Simulation Java
+
+      - name: Deploy Java/Maven project
         working-directory: java/maven
         run: mvn gatling:enterpriseDeploy
+
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
-      - name: Deploy Gatling Enterprise Package & Simulation JS
+          node-version: 20
+
+      - name: Deploy JavaScript project
         working-directory: javascript
         run: |
           npm install && \
