@@ -22,7 +22,7 @@ jobs:
         run: mvn gatling:enterpriseDeploy
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 24
       - name: Deploy Gatling Enterprise Package & Simulation JS
         working-directory: javascript
         run: |
