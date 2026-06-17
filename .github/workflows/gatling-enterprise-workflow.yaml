@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-node@v6
         if: steps.filter.outputs.js == 'true'
         with:
-          node-version: 18
+          node-version: 24
       - name: Deploy Gatling Enterprise Package & Simulation JS
         if: steps.filter.outputs.js == 'true'
         working-directory: javascript
