@@ -20,7 +20,7 @@ jobs:
       - name: Deploy Gatling Enterprise Package & Simulation Java
         working-directory: java/maven
         run: mvn gatling:enterpriseDeploy
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
       - name: Deploy Gatling Enterprise Package & Simulation JS
