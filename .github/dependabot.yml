@@ -58,3 +58,5 @@ updates:
       day: "sunday"
     cooldown:
       default-days: 7
+      exclude:
+        - "@gatling.io/*"
